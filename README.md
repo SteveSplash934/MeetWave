@@ -1,6 +1,6 @@
 # MeetWave
 
-MeetWave is an open-source dynamic meeting management system that allows users to create, manage, and participate in online meetings seamlessly. With features like audio and video streaming, chat functionality, and user controls, MeetWave provides a comprehensive solution for virtual collaboration.
+MeetWave is a dynamic online meeting management system designed for seamless communication and collaboration. It enables users to host and join virtual meetings with features like audio and video streaming, screen sharing, real-time chat, and interactive note-taking. With customizable meeting preferences, user management controls, and a focus on enhancing participant engagement through reactions and recordings, MeetWave aims to provide a comprehensive solution for effective online collaboration.
 
 ## Features
 
