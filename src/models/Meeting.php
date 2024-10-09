@@ -1,0 +1,2 @@
+<?php
+// Meeting model logic

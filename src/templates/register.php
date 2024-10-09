@@ -1,0 +1,2 @@
+<?php
+// Registration page content

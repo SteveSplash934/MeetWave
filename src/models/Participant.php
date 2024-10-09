@@ -1,0 +1,2 @@
+<?php
+// Participant model logic

@@ -1,0 +1,2 @@
+<?php
+// Registration view content

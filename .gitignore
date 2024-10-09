@@ -1,0 +1,8 @@
+# Ignore the following files and directories
+*.log
+*.tmp
+/uploads
+/src/config/config.php
+
+
+*.bat

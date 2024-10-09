@@ -1,0 +1,2 @@
+<?php
+// Participant controller logic

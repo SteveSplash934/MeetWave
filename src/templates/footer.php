@@ -1,0 +1,2 @@
+<?php
+// HTML footer content
