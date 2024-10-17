@@ -63,7 +63,7 @@ class Database
         }
     }
 
-    public function read(string $table, array $conditions): array
+    public function read(string $table, array $conditions): ?array
     {
         try {
             if (empty($conditions)) {
@@ -84,11 +84,13 @@ class Database
             $stmt->execute();
 
             $result = $stmt->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+
+            return !empty($data) ? $data : null;
         } catch (Exception $exception) {
             // Log exception
             echo $exception->getMessage();
-            return [];
+            return null;
         }
     }
 
@@ -169,7 +171,7 @@ class Database
 
                 // Prepare to bind parameters
                 $types = str_repeat('s', count($values)); // Adjust as needed
-                $params = $values; // Store values in a variable
+                $params = $values;
                 $stmt->bind_param($types, ...$params);
 
                 if (!$stmt->execute()) {
@@ -184,39 +186,3 @@ class Database
         }
     }
 }
-
-
-
-$config = [
-    'host' => 'localhost',
-    'database' => 'meetwave',
-    'username' => 'root',
-    'password' => '',
-];
-
-$db = new Database($config);
-// $db->insert('users', [
-//     'username' => 'username goes here.. again',
-//     'email' => 'email goes here again..',
-//     'password' => 'password goes here...'
-// ]);
-
-// Insert example
-// $db->insert('users', ['id' => 'username', 'column2' => 'value2']);
-
-// Read example
-// $results = $db->read('users', ['id' => 1]);
-// print_r($results);
-
-// Update example
-// $db->update('users', ['username' => 'stevesplash934', 'email' => 'stevesplash4@gmail.com'], ['id' => '4']);
-
-// Delete example
-// $db->delete('users', ['id' => '2']);
-
-// Array delete example
-// $db->arrayDelete('users', ['id' => [1, 3]]);
-
-
-
-// to fit: id	username	email	password	profile_picture	created_at	updated_at	
