@@ -1,8 +1,6 @@
-# Ignore the following files and directories
+.vscode
 *.log
 *.tmp
 /uploads
-/src/config/config.php
-
-
 *.bat
+*.log
