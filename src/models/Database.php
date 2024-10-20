@@ -86,7 +86,7 @@ class Database
             $result = $stmt->get_result();
             $data = $result->fetch_all(MYSQLI_ASSOC);
 
-            return !empty($data) ? $data : null;
+            return !empty($data) ? $data[0] : null;
         } catch (Exception $exception) {
             // Log exception
             echo $exception->getMessage();
@@ -185,4 +185,18 @@ class Database
             return false;
         }
     }
+    public function prepare($query)
+    {
+        return $this->conn->prepare($query);
+    }
 }
+
+
+$config = [
+    'host' => 'localhost',
+    'database' => 'meetwave',
+    'username' => 'root',
+    'password' => '',
+];
+
+$db = new Database($config);

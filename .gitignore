@@ -4,3 +4,5 @@
 /uploads
 *.bat
 *.log
+error_log.txt
+test*
