@@ -86,7 +86,8 @@ class Meeting
     public function deleteMeeting($meeting_id)
     {
         try {
-            $success = $this->db->delete('meetings', ['meeting_id' => $meeting_id]);
+
+            $success = $this->db->delete('meetings', ['meeting_id' => $meeting_id]) && $this->db->delete('meeting_participants', ['meeting_id' => $meeting_id]);
             return $success;
         } catch (Exception $e) {
             // Handle exception
