@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . '/../utils/helpers.php');
 
 class Database
 {
@@ -31,7 +32,7 @@ class Database
             }
         } catch (Exception $exception) {
             // Log exception (implement a logging mechanism)
-            echo $exception->getMessage();
+            logError($exception->getMessage());
         }
     }
 
@@ -58,7 +59,7 @@ class Database
             return $stmt->execute();
         } catch (Exception $exception) {
             // Log exception
-            echo $exception->getMessage();
+            logError($exception->getMessage());
             return false;
         }
     }
@@ -89,7 +90,7 @@ class Database
             return !empty($data) ? $data[0] : null;
         } catch (Exception $exception) {
             // Log exception
-            echo $exception->getMessage();
+            logError($exception->getMessage());
             return null;
         }
     }
@@ -117,7 +118,7 @@ class Database
             return $stmt->execute();
         } catch (Exception $exception) {
             // Log exception
-            echo $exception->getMessage();
+            logError($exception->getMessage());
             return false;
         }
     }
@@ -144,7 +145,7 @@ class Database
             return $stmt->execute();
         } catch (Exception $exception) {
             // Log exception
-            echo $exception->getMessage();
+            logError($exception->getMessage());
             return false;
         }
     }
@@ -181,7 +182,7 @@ class Database
             return true;
         } catch (Exception $exception) {
             // Log exception
-            echo $exception->getMessage();
+            logError($exception->getMessage());
             return false;
         }
     }

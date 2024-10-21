@@ -3,7 +3,6 @@
 use function PHPSTORM_META\type;
 
 require_once('Database.php');
-require_once(__DIR__ . '/../utils/helpers.php');
 
 
 // Meeting model logic
@@ -374,7 +373,3 @@ class Meeting
 }
 
 $meeting = new Meeting($db);
-
-
-// - deleting user
-// - ending meeting
